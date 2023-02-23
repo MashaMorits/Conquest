@@ -1,0 +1,104 @@
+.footer {
+    background: #444240;
+    padding: 67px 0px;
+
+    &__wrap {
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        @media (max-width: 991px){
+            padding: 0 30px;
+        }
+        @media (max-width: 575px){
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__link {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+        color: rgba(255, 255, 255, 0.75);
+        text-decoration: none;
+        display: block;
+        margin-bottom: 15px;
+        transition: $transition;
+
+        &:hover {
+            color: $pink;
+            transition: $transition;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__subtitle {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+        color: #FFFFFF;
+
+        @media (max-width: 991px){
+            margin-bottom: 15px;
+        }
+    }
+
+    .logo {
+        margin-bottom: 32px;
+        display: block;
+        width: 130px;
+        margin-top: -6px;
+
+        img {
+            filter: brightness(10);
+        }
+
+        @media (max-width: 575px){
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+    }
+
+    .col {
+        &__contacts {
+            width: 160px;
+        }
+
+        &__about {
+            width: 123px;
+        }
+
+        &__buyer {
+            width: 181px;
+        }
+
+        &__payment {
+            width: 180px;
+        }
+        @media (max-width: 991px) {
+            width: 50%;
+            margin-bottom: 30px;
+        }
+        @media (max-width: 575px){
+            text-align: center;
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 575px){
+        padding: 25px 0;
+    }
+}

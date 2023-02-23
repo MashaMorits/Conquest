@@ -1,0 +1,196 @@
+.header {
+    padding-top: 31px;
+    padding-bottom: 28px;
+
+    &__wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__menu {
+        ul {
+            display: flex;
+            gap: 0 65px;
+
+            li {
+                a {
+
+                    font-family: 'Roboto';
+                    color: $gray_text;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 16px;
+                    transition: $transition;
+                    border-bottom: 1px solid transparent;
+
+                    &:hover {
+                        color: $pink;
+                        transition: $transition;
+                        border-bottom: 1px solid $pink;
+                    }
+                }
+            }
+        }
+
+        @media (max-width: 991px) {
+            display: none;
+        }
+    }
+
+    &__icons {
+        display: flex;
+        align-items: center;
+        gap: 0 23px;
+
+        a {
+            svg path {
+                fill: $light_black;
+            }
+
+            &:nth-child(2) {
+                position: relative;
+
+                &::after {
+                    content: '1';
+                    width: 13px;
+                    height: 13px;
+                    background: #E6C8B4;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: -5px;
+                    right: -6px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-family: 'Roboto';
+                    font-weight: 400;
+                    font-size: 8px;
+                    line-height: 9px;
+                    color: #1B1A17;
+                }
+            }
+
+        }
+
+        @media (max-width: 575px) {
+            gap: 0 10px;
+        }
+    }
+
+    @media (max-width: 991px) {
+        padding: 15px 0;
+        background: rgb(244 242 237);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+
+        .logo {
+            margin-left: 50px;
+        }
+    }
+}
+
+.mobileMenu {
+    display: none;
+
+    @media (max-width: 991px) {
+        display: flex;
+        height: calc(100vh - 56px);
+        width: 100%;
+        position: fixed;
+        top: 56px;
+        left: -100%;
+        z-index: 5;
+        transition: $transition;
+        background: #FDFDFB;
+
+        &.opened {
+            left: 0;
+            transition: $transition;
+        }
+
+        ul {
+
+            width: 100%;
+
+            li {
+
+                a {
+                    font-family: 'Roboto';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 16px;
+                    display: block;
+
+                    color: #555248;
+                    transition: $transition;
+
+                    padding: 20px;
+
+                    &:hover {
+                        color: $pink;
+                        transition: $transition;
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+.mobileMenuOpen {
+    display: none;
+
+    @media (max-width: 991px) {
+        display: flex;
+        width: 28px;
+        height: 9px;
+        position: relative;
+        flex-direction: column;
+        justify-content: space-between;
+
+        p {
+            width: 100%;
+            height: 1px;
+
+            background: $pink;
+            transition: $transition;
+        }
+
+        &::after,
+        &::before {
+            content: '';
+            width: 100%;
+            height: 1px;
+            transition: $transition;
+            background: $pink;
+        }
+
+        &.active {
+            p {
+                display: none;
+            }
+
+            &::after {
+                content: '';
+                transform: rotate(45deg);
+                position: absolute;
+                top: 0;
+                transition: $transition;
+            }
+
+            &::before {
+                content: '';
+                transform: rotate(-45deg);
+                position: absolute;
+                top: 0;
+
+                transition: $transition;
+            }
+        }
+    }
+}
